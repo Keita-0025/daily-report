@@ -1,9 +1,70 @@
 @import "sanitize.css";
 
+$c-b:#333;
+$c-w:#fff;
+$p-10:10px;
+$p-20:20px;
+
+
 body {
   font-family: "Cabin", "Segoe UI", "Tahoma", "Verdana", sans-serif;
+  padding: $p-20;
 }
 
-h1 {
-  color: red;
+// form
+.form {
+  margin: 0 auto;
+  border: solid 3px $c-b;
+  max-width: 780px;
+  width: 100%;
+  padding: $p-20;
+
+  &__list {
+    display: flex;
+    margin: 0 0 20px;
+    &--title {
+      font-weight: bold;
+      width: 30%;
+    cursor: pointer;
+    }
+    &--field {
+      width: 70%;
+    }
+  }
+  &__btn {
+    text-align: center;
+  }
+}
+
+// input,textarea
+.input-field {
+  width: 100%;
+  padding: $p-10;
+  border: 2px solid $c-b;
+}
+
+// button
+.btn{
+    background-color: $c-b;
+    color: $c-w;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 7px 20px;
+    cursor: pointer;
+    transition: opacity .25s;
+
+    &:hover{
+        opacity: .8;
+    }
+}
+
+// link
+.link{
+    text-align: right;
+    margin: 10px 0 0 ;
+    & > a {
+        margin: 0 5px;
+        color: $c-b;
+    }
 }
