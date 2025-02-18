@@ -1,10 +1,10 @@
 @import "sanitize.css";
 
-$c-b:#333;
-$c-w:#fff;
-$p-10:10px;
-$p-20:20px;
-
+$c-b: #333;
+$c-f: #fff;
+$c-bc: #eee;
+$p-10: 10px;
+$p-20: 20px;
 
 body {
   font-family: "Cabin", "Segoe UI", "Tahoma", "Verdana", sans-serif;
@@ -25,7 +25,7 @@ body {
     &--title {
       font-weight: bold;
       width: 30%;
-    cursor: pointer;
+      cursor: pointer;
     }
     &--field {
       width: 70%;
@@ -44,27 +44,50 @@ body {
 }
 
 // button
-.btn{
-    background-color: $c-b;
-    color: $c-w;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 15px;
-    padding: 7px 20px;
-    cursor: pointer;
-    transition: opacity .25s;
+.btn {
+  background-color: $c-b;
+  color: $c-f;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 7px 20px;
+  cursor: pointer;
+  transition: opacity 0.25s;
 
-    &:hover{
-        opacity: .8;
-    }
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 // link
-.link{
-    text-align: right;
-    margin: 10px 0 0 ;
-    & > a {
-        margin: 0 5px;
-        color: $c-b;
+.link {
+  text-align: right;
+  margin: 10px 0 0;
+  & > a {
+    margin: 0 5px;
+    color: $c-b;
+  }
+}
+
+// table
+.table {
+  width: 100%;
+  &__head {
+    background-color: $c-bc;
+    & th {
+      border: 1px solid $c-b;
+      text-align: center;
+      padding: 5px;
+      width: 15%;
+
+      &:nth-child(4) {
+        width: 55%;
+      }
     }
+  }
+  &__body td{
+    text-align: left;
+    border: 1px solid $c-b;
+    padding: 10px;
+  }
 }
