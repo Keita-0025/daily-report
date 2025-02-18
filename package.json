@@ -13,6 +13,7 @@
     "@swc/core": "^1.10.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sanitize.css": "^13.0.0",
     "sass": "^1.85.0"
   },
   "devDependencies": {
