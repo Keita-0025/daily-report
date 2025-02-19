@@ -27,9 +27,9 @@ if ($history) {
 const $form = document.getElementById('js-form');
 
 if ($form) {
-  $form.addEventListener('click', (e) => {
-    e.preventDefault();
-    addReport(db)
+  $form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    addReport(db,event)
     $form.reset();
   });
 }
