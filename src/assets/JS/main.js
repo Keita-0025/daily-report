@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+// import { getAnalytics } from "firebase/analytics";
+import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,7 +28,7 @@ const db = getFirestore(app);
 console.log(db)
 // Get a list of reports from your database
 const fetchReports = async () => {
-  //Get Collection 
+  //Get Collection
   const reportSnapshot = await getDocs(collection(db, 'reports'));
   console.log(reportSnapshot)
   let tags = '';
@@ -44,6 +44,47 @@ const fetchReports = async () => {
   $history.innerHTML = tags;
 }
 
-if($history){
+if ($history) {
   fetchReports();
 }
+
+
+
+//Create new data
+
+const getFormData = () => ({
+  name: document.getElementById('name').value,
+  date: new Date(),
+  work: document.getElementById('work').value,
+  comment: document.getElementById('comment').value,
+});
+
+
+const addReport = async () => {
+  try {
+    const { name, work, comment, date } = getFormData()
+    const docRef = await addDoc(collection(db, "reports"), {
+      date,
+      name,
+      work,
+      comment
+    });
+    console.log(date,name,work,comment);
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+} 
+
+
+const $form = document.getElementById('js-form');
+
+if($form){
+  $form .addEventListener('click', (e) => {
+    e.preventDefault();
+    addReport()
+    $form .reset();
+  });
+}
+
+
