@@ -1,0 +1,78 @@
+@import "sanitize.css";
+body {
+  font-family: "Cabin", "Segoe UI", "Tahoma", "Verdana", sans-serif;
+  padding: 20px;
+}
+
+.form {
+  margin: 0 auto;
+  border: solid 3px #333;
+  max-width: 780px;
+  width: 100%;
+  padding: 20px;
+}
+.form__list {
+  display: flex;
+  margin: 0 0 20px;
+}
+.form__list--title {
+  font-weight: bold;
+  width: 30%;
+  cursor: pointer;
+}
+.form__list--field {
+  width: 70%;
+}
+.form__btn {
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #333;
+}
+
+.btn {
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 7px 20px;
+  cursor: pointer;
+  transition: opacity 0.25s;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+.link {
+  text-align: right;
+  margin: 10px 0 0;
+}
+.link > a {
+  margin: 0 5px;
+  color: #333;
+}
+
+.table {
+  width: 100%;
+}
+.table__head {
+  background-color: #eee;
+}
+.table__head th {
+  border: 1px solid #333;
+  text-align: center;
+  padding: 5px;
+  width: 15%;
+}
+.table__head th:nth-child(4) {
+  width: 55%;
+}
+.table__body td {
+  text-align: left;
+  border: 1px solid #333;
+  padding: 10px;
+}/*# sourceMappingURL=style.css.map */

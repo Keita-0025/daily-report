@@ -1,13 +1,54 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="daily-report_homePage">
+  <link rel="stylesheet" href="./src/assets/SCSS/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>daily-report</title>
+</head>
+
+<body>
+  <form class="form" action="" id="js-form">
+    <div class="form__list">
+      <label class="form__list--title" for="name">Name:</label>
+      <div class="form__list--field js-input">
+        <input class="input-field" type="text" id="name" name="name">
+      </div>
+    </div>
+
+    <div class="form__list">
+      <label class="form__list--title" for="work">Work:</label>
+      <div class="form__list--field js-input">
+        <input class="input-field" type="text" id="work" name="work">
+      </div>
+    </div>
+
+    <div class="form__list">
+      <label class="form__list--title" for="comment">Comment:</label>
+      <div class="form__list--field js-input">
+        <textarea class="input-field" type="text" id="comment" name="comment" rows="4" cols="50"></textarea>
+      </div>
+    </div>
+
+    <div class="form__btn">
+      <button class="btn" type="submit">Submit</button>
+    </div>
+
+  </form>
+
+  <div class="link">
+    <a href="./">Home</a>
+    <a href="./history.html">History</a>
+  </div>
+
+  <script type="module" src="./src/assets/JS/main.js"></script>
+</body>
+
 </html>
