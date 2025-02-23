@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import fetchReports from './modules/fetchHistoryData.js'
 import addReport from './modules/submitData.js'
+import deleteReport from './modules/deleteHistoryData'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,19 +20,39 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const $history = document.getElementById('js-history');
-
 if ($history) {
   fetchReports(db, $history);
 }
 
 const $form = document.getElementById('js-form');
-
 if ($form) {
   $form.addEventListener('submit', (event) => {
     event.preventDefault();
-    addReport(db,event)
+    addReport(db, event)
     $form.reset();
   });
 }
+
+const $delBtn = document.querySelectorAll('.delBtn');
+console.log($delBtn)
+document.addEventListener('click', async (e) => {
+  if (e.target.classList.contains('delBtn')) {
+    const reportId = e.target.getAttribute('data-id');
+    if (!reportId) {
+      return
+    }
+    console.log(`削除対象ID, ${reportId}`);
+
+    const isConfirmed = window.confirm('本当に削除してもよろしいですか？');
+    if (!isConfirmed) {
+      return;
+    }
+
+    await deleteReport(db, reportId);
+    e.target.closest('tr').remove();
+
+  }
+});
+
 
 
