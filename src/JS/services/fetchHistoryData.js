@@ -1,7 +1,7 @@
-import {collection, getDocs} from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 
 // Get a list of reports from your database
-const fetchReports = async (db,historyTbody) => {
+const fetchReports = async (db, historyTbody) => {
     //Get Collection
     const reportSnapshot = await getDocs(collection(db, 'reports'));
     console.log(reportSnapshot)
@@ -13,6 +13,7 @@ const fetchReports = async (db,historyTbody) => {
         <td>${doc.data().name}</td>
         <td>${doc.data().work}</td>
         <td>${doc.data().comment}</td>
+        <td><button class='btn delBtn' data-id = ${doc.id}>delete</button></td>
         </tr>`
     });
     historyTbody.innerHTML = tags;

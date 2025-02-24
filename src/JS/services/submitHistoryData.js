@@ -1,5 +1,5 @@
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
-import validateFromData from './validates';
+import validateFormData from './validates';
 
 const getFormData = (event) => {
 
@@ -14,7 +14,7 @@ const getFormData = (event) => {
 
 const prepareFormData = (event) => {
   const { name, work, comment } = getFormData(event)
-  const errors = validateFromData({ name, work, comment });
+  const errors = validateFormData({ name, work, comment });
 
   if (errors) {
     return { errors }

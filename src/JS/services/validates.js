@@ -1,4 +1,4 @@
-const validateFromData = ({ name, work, comment }) => {
+const validateFormData = ({ name, work, comment }) => {
     let errors = [];
     if (!name || !work || !comment) {
       errors.push('すべてのフィールドに入力してください');
@@ -15,4 +15,4 @@ const validateFromData = ({ name, work, comment }) => {
     return errors.length > 0 ? errors : null;
   }
 
-  export default validateFromData;
+  export default validateFormData;
