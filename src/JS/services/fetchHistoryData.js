@@ -13,7 +13,8 @@ const fetchReports = async (db, historyTbody) => {
         <td>${doc.data().name}</td>
         <td>${doc.data().work}</td>
         <td>${doc.data().comment}</td>
-        <td><button class='btn delBtn' data-id = ${doc.id}>delete</button></td>
+        <td><button class='btn js-btn' data-id = ${doc.id}>delete</button></td>
+        <td><button class='btn js-btn' data-id = ${doc.id}>update</button></td>
         </tr>`
     });
     historyTbody.innerHTML = tags;
